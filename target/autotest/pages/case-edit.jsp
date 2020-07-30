@@ -579,6 +579,7 @@
 //------------------------------------------------------------------------------
                                     alert("修改成功");
                                     xadmin.close();
+                                    xadmin.father_reload();
                                     //window.parent.location.reload();
                                     // parent.layer.table.reload('itbody',{page:{curr:1}});
                                     // parent.layer.close(index);

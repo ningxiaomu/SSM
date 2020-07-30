@@ -1,7 +1,9 @@
 package com.luo.domain;
 
-public class CaseInfo {
 
+
+
+public class CaseInfo {
     private String caseid;
     private String caseName;
     private String project;
@@ -9,20 +11,38 @@ public class CaseInfo {
     private String requestAddress;
     private String method;
     private String contentType;
+    private String need_login;
     private String parameter;
     private String exResult;
+    private String joinTime;
     private Integer status;
     private String statusStr;
 
+    public String getJoinTime() {
+        return this.joinTime;
+    }
+
+    public void setJoinTime(String joinTime) {
+        this.joinTime = joinTime;
+    }
+
     public String getStatusStr() {
-        if(status==0){
-            statusStr="停用";
-        }else if(status==1){
-            statusStr="启用";
-        }else {
-            statusStr="错误";
+        if (this.status.intValue() == 0) {
+            this.statusStr = "停用";
+        } else if (this.status.intValue() == 1) {
+            this.statusStr = "启用";
+        } else {
+            this.statusStr = "错误";
         }
-        return statusStr;
+        return this.statusStr;
+    }
+
+    public String getNeed_login() {
+        return this.need_login;
+    }
+
+    public void setNeed_login(String need_login) {
+        this.need_login = need_login;
     }
 
     public void setStatusStr(String statusStr) {
@@ -30,7 +50,7 @@ public class CaseInfo {
     }
 
     public String getCaseid() {
-        return caseid;
+        return this.caseid;
     }
 
     public void setCaseid(String caseid) {
@@ -38,7 +58,7 @@ public class CaseInfo {
     }
 
     public String getCaseName() {
-        return caseName;
+        return this.caseName;
     }
 
     public void setCaseName(String caseName) {
@@ -46,7 +66,7 @@ public class CaseInfo {
     }
 
     public String getProject() {
-        return project;
+        return this.project;
     }
 
     public void setProject(String project) {
@@ -54,7 +74,7 @@ public class CaseInfo {
     }
 
     public String getDomain() {
-        return domain;
+        return this.domain;
     }
 
     public void setDomain(String domain) {
@@ -62,7 +82,7 @@ public class CaseInfo {
     }
 
     public String getRequestAddress() {
-        return requestAddress;
+        return this.requestAddress;
     }
 
     public void setRequestAddress(String requestAddress) {
@@ -70,7 +90,7 @@ public class CaseInfo {
     }
 
     public String getMethod() {
-        return method;
+        return this.method;
     }
 
     public void setMethod(String method) {
@@ -78,7 +98,7 @@ public class CaseInfo {
     }
 
     public String getContentType() {
-        return contentType;
+        return this.contentType;
     }
 
     public void setContentType(String contentType) {
@@ -86,7 +106,7 @@ public class CaseInfo {
     }
 
     public String getParameter() {
-        return parameter;
+        return this.parameter;
     }
 
     public void setParameter(String parameter) {
@@ -94,7 +114,7 @@ public class CaseInfo {
     }
 
     public String getExResult() {
-        return exResult;
+        return this.exResult;
     }
 
     public void setExResult(String exResult) {
@@ -102,26 +122,16 @@ public class CaseInfo {
     }
 
     public Integer getStatus() {
-        return status;
+        return this.status;
     }
 
     public void setStatus(Integer status) {
         this.status = status;
     }
 
-    @Override
     public String toString() {
-        return "CaseInfo{" +
-                "caseid='" + caseid + '\'' +
-                ", caseName='" + caseName + '\'' +
-                ", project='" + project + '\'' +
-                ", domain='" + domain + '\'' +
-                ", requestAddress='" + requestAddress + '\'' +
-                ", method='" + method + '\'' +
-                ", contentType='" + contentType + '\'' +
-                ", parameter='" + parameter + '\'' +
-                ", exResult='" + exResult + '\'' +
-                ", status=" + status +
-                '}';
+        return "CaseInfo{caseid='" + this.caseid + '\'' + ", caseName='" + this.caseName + '\'' + ", project='" + this.project + '\'' + ", domain='" + this.domain + '\'' + ", requestAddress='" + this.requestAddress + '\'' + ", method='" + this.method + '\'' + ", contentType='" + this.contentType + '\'' + ", need_login='" + this.need_login + '\'' + ", parameter='" + this.parameter + '\'' + ", exResult='" + this.exResult + '\'' + ", joinTime='" + this.joinTime + '\'' + ", status=" + this.status + ", statusStr='" + this.statusStr + '\'' + '}';
     }
 }
+
+

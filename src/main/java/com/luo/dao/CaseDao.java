@@ -14,7 +14,7 @@ public interface CaseDao {
   List<CaseInfo> findAllCase();
   
   @Insert({"insert mycase(caseid,caseName,project,domain,requestAddress,method,contentType,need_login,parameter,exResult,joinTime,status) values(replace(uuid(),'-',''),#{caseName},#{project},#{domain},#{requestAddress},#{method},#{contentType},#{need_login},#{parameter},#{exResult},now(),#{status})"})
-  void saveCase(CaseInfo paramCaseInfo);
+  Integer saveCase(CaseInfo paramCaseInfo);
   
   @Select({"select * from mycase where caseid=#{caseid}"})
   CaseInfo findCaseByCaseid(String paramString);
@@ -32,10 +32,10 @@ public interface CaseDao {
   List<CaseInfo> findAllSelectCase(String paramString);
   
   @Delete({"delete from mycase where caseid=#{caseid}"})
-  void delSelectCase(String paramString);
+  Integer delSelectCase(String paramString);
   
   @Update({"update  mycase set caseName=#{caseName},project=#{project},domain=#{domain},requestAddress=#{requestAddress},method=#{method},contentType=#{contentType},need_login=#{need_login},parameter=#{parameter},exResult=#{exResult},status=#{status} where caseid=#{caseid}"})
-  void editCase(CaseInfo paramCaseInfo);
+  Integer editCase(CaseInfo paramCaseInfo);
   
   @Select({"select project from mycase where caseid=#{caseid}"})
   String findProjectById(String paramString);
